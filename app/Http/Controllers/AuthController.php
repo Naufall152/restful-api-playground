@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    // Login user dan generate token
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
@@ -24,7 +23,6 @@ class AuthController extends Controller
         ]);
     }
 
-    // Logout user dan invalidate token
     public function logout()
     {
         try {
@@ -35,7 +33,6 @@ class AuthController extends Controller
         }
     }
 
-    // Tampilkan user yang sedang login
     public function me()
     {
         return response()->json(auth()->user());
